@@ -17,6 +17,7 @@ public class Book {
 
 	/**
 	 * Cette methode permet de générer la cote du livre sous le format AUAA-XXX
+	 * 
 	 * @return
 	 */
 	private String generateCote() {
@@ -27,10 +28,37 @@ public class Book {
 		return sb.toString();
 	}
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getCote() {
+		return cote;
+	}
+
 	@Override
 	public String toString() {
 		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", year=" + year + "]";
 	}
 
-	
 }

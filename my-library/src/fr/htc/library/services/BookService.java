@@ -11,7 +11,7 @@ public interface BookService {
 	List<Book> getBookList();
 
 	void deleteBookByCote(String cote);
-
+       
 	void deleteBook(Book book);
 	
 	Book findBookByCote(String cote);
