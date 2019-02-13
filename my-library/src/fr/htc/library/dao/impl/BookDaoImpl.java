@@ -16,8 +16,8 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public Book getBookByCote(String cote) {
-		return DBMap.booksMap.get(cote); 
 		
+		return DBMap.booksMap.get(cote); 
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class BookDaoImpl implements BookDao {
 
 	@Override
 	public void remove(Book book) {
-		// TODO Auto-generated method stub
+		this.remove(book.getCote());	
 
 	}
 

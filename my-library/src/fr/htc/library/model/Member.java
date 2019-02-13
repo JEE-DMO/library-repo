@@ -1,13 +1,17 @@
 package fr.htc.library.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Member {
-	
+
 	private static int sequence = 100;
 
 	String matricule;
 	String firstName;
 	String lastName;
 	int age;
+	List<Book> borrowedBooks = new ArrayList<>();
 
 	public Member(String firstName, String lastName, int age) {
 		this.firstName = firstName;
@@ -24,12 +28,22 @@ public class Member {
 		StringBuilder sb = new StringBuilder(firstName.substring(0, 1).toUpperCase());
 		sb.append(lastName.substring(0, 1).toUpperCase());
 		sb.append(sequence++);
-		
+
 		return sb.toString();
 	}
 
-	
-	
+	public boolean canCheck() {
+		if (borrowedBooks.size() < 3) {
+
+			return true;
+		}
+		return false;
+	}
+
+	public void addBook(Book book) {
+		this.borrowedBooks.add(book);
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -60,10 +74,13 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [matricule=" + matricule + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
-				+ "]";
+		StringBuilder sb = new StringBuilder("Member [matricule=" + matricule + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", age=" + age);
+		sb.append("\n Borrowed books : ");
+		for (Book book : borrowedBooks) {
+			sb.append("\t -" + book);
+		}
+		return sb.toString();
 	}
-	
-	
 
 }

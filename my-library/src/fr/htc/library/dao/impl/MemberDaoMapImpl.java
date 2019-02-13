@@ -23,9 +23,10 @@ public class MemberDaoMapImpl implements MemberDao {
 	}
 
 	@Override
-	public void save(Member member) {
+	public Member save(Member member) {
 		
 		DBMap.membersMap.put(member.getMatricule(), member);
+		return member;
 
 	}
 

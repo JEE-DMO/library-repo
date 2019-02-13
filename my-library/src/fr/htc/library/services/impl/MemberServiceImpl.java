@@ -11,16 +11,16 @@ public class MemberServiceImpl implements MemberService {
 	MemberDao memberDao = new MemberDaoMapImpl();
 
 	@Override
-	public void createMember(String lastName, String firstName, int age) {
+	public Member createMember(String lastName, String firstName, int age) {
 
 		if (age < 18) {
 			System.err.println("You are not allowed to subscribe, must have at least 18 years old");
-			return;
+			return null;
 		}
 
 		Member member = new Member(firstName, lastName, age);
 
-		memberDao.save(member);
+		return memberDao.save(member);
 
 	}
 
@@ -47,7 +47,6 @@ public class MemberServiceImpl implements MemberService {
 		if (matricule == null || matricule.isEmpty()) {
 			System.out.println("matricul must be provided ");
 			return null;
-			
 		}
 		
 		return memberDao.getMemberByMatricule(matricule);

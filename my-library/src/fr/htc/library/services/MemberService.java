@@ -5,7 +5,7 @@ import java.util.List;
 import fr.htc.library.model.Member;
 
 public interface MemberService {
-	void createMember(String lastName, String firstName, int age);
+	Member createMember(String lastName, String firstName, int age);
 
 	List<Member> getMemberList();
 

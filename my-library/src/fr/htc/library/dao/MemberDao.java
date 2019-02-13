@@ -10,7 +10,7 @@ public interface MemberDao {
 
 	Member getMemberByMatricule(String matricule);
 
-	void save(Member member);
+	Member save(Member member);
 
 	void remove(String matricule);
 

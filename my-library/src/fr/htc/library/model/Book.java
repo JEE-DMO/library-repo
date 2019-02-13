@@ -7,6 +7,8 @@ public class Book {
 	String title;
 	String author;
 	String year;
+	Member borrower;
+	
 
 	public Book(String title, String author, String year) {
 		this.title = title;
@@ -14,6 +16,23 @@ public class Book {
 		this.year = year;
 		this.cote = generateCote();
 	}
+	
+	public boolean isAvailable() {
+		if(this.borrower == null) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * Cette methode permet de générer la cote du livre sous le format AUAA-XXX
@@ -56,9 +75,18 @@ public class Book {
 		return cote;
 	}
 
+	public Member getBorrower() {
+		return borrower;
+	}
+
+	public void setBorrower(Member borrower) {
+		this.borrower = borrower;
+	}
+
 	@Override
 	public String toString() {
-		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", year=" + year + "]";
+		return "Book [cote=" + cote + ", title=" + title + ", author=" + author + ", year=" + year 
+				+ "\n - Borrower = " + borrower;
 	}
 
 }
