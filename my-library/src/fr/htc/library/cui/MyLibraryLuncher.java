@@ -20,10 +20,16 @@ public class MyLibraryLuncher {
 
 		// ** save Books abd get all books
 		bookService.createBook("le Zahir", "Paolo", "2005");
-
-		borrowService.checkOut("DM100", "PA05-10");
+		bookService.createBook("le Zahir", "Paolo", "2005");
+		bookService.createBook("le Zahir", "Paolo", "2005");
+		bookService.createBook("le Zahir", "Paolo", "2005");
 		
-		System.out.println(m);
+		System.out.println(bookService.getBookList());
+		
+
+		//borrowService.checkOut("DM100", "PA05-10");
+		
+		//System.out.println(m);
 
 	}
 

@@ -3,7 +3,7 @@ package fr.htc.library.services.impl;
 import java.util.List;
 
 import fr.htc.library.dao.MemberDao;
-import fr.htc.library.dao.impl.MemberDaoMapImpl;
+import fr.htc.library.dao.impl.map.MemberDaoMapImpl;
 import fr.htc.library.model.Member;
 import fr.htc.library.services.MemberService;
 

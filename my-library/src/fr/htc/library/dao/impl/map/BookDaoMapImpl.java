@@ -1,4 +1,4 @@
-package fr.htc.library.dao.impl;
+package fr.htc.library.dao.impl.map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import fr.htc.library.dao.BookDao;
 import fr.htc.library.dao.db.DBMap;
 import fr.htc.library.model.Book;
 
-public class BookDaoImpl implements BookDao {
+public class BookDaoMapImpl implements BookDao {
 
 	@Override
 	public List<Book> getAllBooks() {

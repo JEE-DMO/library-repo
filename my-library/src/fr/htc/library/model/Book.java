@@ -17,6 +17,13 @@ public class Book {
 		this.cote = generateCote();
 	}
 	
+	public Book() {
+	}
+
+	public void setCote(String cote) {
+		this.cote = cote;
+	}
+
 	public boolean isAvailable() {
 		if(this.borrower == null) {
 			return true;

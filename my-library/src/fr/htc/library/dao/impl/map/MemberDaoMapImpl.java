@@ -1,4 +1,4 @@
-package fr.htc.library.dao.impl;
+package fr.htc.library.dao.impl.map;
 
 import java.util.ArrayList;
 import java.util.List;

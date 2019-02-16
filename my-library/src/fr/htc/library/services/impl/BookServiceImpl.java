@@ -1,14 +1,16 @@
 package fr.htc.library.services.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import fr.htc.library.dao.BookDao;
-import fr.htc.library.dao.impl.BookDaoImpl;
+import fr.htc.library.dao.impl.jdbc.BookDaoJdbcImpl;
 import fr.htc.library.model.Book;
 import fr.htc.library.services.BookService;
 
 public class BookServiceImpl implements BookService {
-	BookDao bookDao = new BookDaoImpl();
+//	BookDao bookDao = new BookDaoMapImpl();
+	BookDao bookDao = new BookDaoJdbcImpl();
 
 	@Override
 	public void createBook(String title, String author, String year) {
@@ -18,7 +20,13 @@ public class BookServiceImpl implements BookService {
 			return;
 		}
 		Book book = new Book(title, author, year);
-		bookDao.save(book);
+		
+		try {
+			bookDao.save(book);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 

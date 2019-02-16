@@ -1,5 +1,6 @@
 package fr.htc.library.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import fr.htc.library.model.Book;
@@ -10,7 +11,7 @@ public interface BookDao {
 
 	Book getBookByCote(String cote);
 
-	void save(Book book);
+	void save(Book book)  throws SQLException;
 
 	void remove(String cote);
 
